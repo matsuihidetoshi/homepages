@@ -1,10 +1,50 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
+      <v-row>
+        <v-col cols="12">
+          <v-card>
+            <v-row
+              class="
+              "
+            >
+              <v-col cols="4">
+                <v-avatar
+                  class="ml-5"
+                  size="90"
+                >
+                  <v-img src="/profile.jpg" />
+                </v-avatar>
+              </v-col>
+              <v-col cols="8">
+                <div
+                  class="
+                    text-left
+                    mt-4
+                  "
+                >
+                  <name message="Matsui"
+                    class="
+                      d-inline-block
+                      font-weight-bold
+                      text-h5
+                    "
+                  />
+                  <name message="Hidetoshi"
+                    class="
+                      d-inline-block
+                      font-weight-bold
+                      text-h5
+                    "
+                  />
+                  <name message="Web Developer" />
+                </div>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
+      
       <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
@@ -77,13 +117,11 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Name from '~/components/Name.vue'
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo
+    Name
   }
 }
 </script>
