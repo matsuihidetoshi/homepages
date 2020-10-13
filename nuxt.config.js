@@ -18,7 +18,7 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://www2.matsuihidetoshi.work' },
       { hid: 'og:title', property: 'og:title', content: 'Matsui Hidetoshi' },
       { hid: 'og:description', property: 'og:description', content: '静岡県浜松市のWeb Developer、松井英俊のホームページ' },
-      { hid: 'og:image', property: 'og:image', content: '/profile.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://www2.matsuihidetoshi.work/profile.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
