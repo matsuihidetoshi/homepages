@@ -4,7 +4,7 @@
       <h3
         class="mb-5"
       >
-        Articles
+        articles
       </h3>
       <v-card
         v-for="(article, index) in articles"
