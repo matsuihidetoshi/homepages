@@ -11,13 +11,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '静岡県浜松市のWeb Developer、松井英俊のホームページ' },
+      { hid: 'description', name: 'description', content: '静岡県浜松市のWeb Developer 松井英俊のホームページ' },
       { hid: 'keywords', name: 'keywords', content: '松井,英俊,松井英俊,Matsui,Hidetoshi,Matsui Hidetoshi,浜松,静岡,浜松市,静岡県,Web,エンジニア,まついひでとし,まつい,ひでとし' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Matsui Hidetoshi' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://www2.matsuihidetoshi.work' },
       { hid: 'og:title', property: 'og:title', content: 'Matsui Hidetoshi' },
-      { hid: 'og:description', property: 'og:description', content: '静岡県浜松市のWeb Developer、松井英俊のホームページ' },
+      { hid: 'og:description', property: 'og:description', content: '静岡県浜松市のWeb Developer 松井英俊のホームページ' },
       { hid: 'og:image', property: 'og:image', content: 'https://www2.matsuihidetoshi.work/profile.png' },
     ],
     link: [

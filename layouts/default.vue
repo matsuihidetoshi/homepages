@@ -60,13 +60,28 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-newspaper-variant-multiple-outline',
+          title: 'Articles',
+          to: '/articles'
+        },
+        {
+          icon: 'mdi-wrench',
+          title: 'Skills',
+          to: '/skills'
+        },
+        {
+          icon: 'mdi-information-outline',
+          title: 'Works',
+          to: '/works'
+        },
+        {
+          icon: 'mdi-comment-text-outline',
+          title: 'Contact',
+          to: '/contact'
         }
       ],
       miniVariant: false,
