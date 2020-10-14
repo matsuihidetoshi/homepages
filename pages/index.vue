@@ -23,14 +23,16 @@
                     mt-4
                   "
                 >
-                  <name message="Matsui"
+                  <name
+                    message="Matsui"
                     class="
                       d-inline-block
                       font-weight-bold
                       text-h5
                     "
                   />
-                  <name message="Hidetoshi"
+                  <name
+                    message="Hidetoshi"
                     class="
                       d-inline-block
                       font-weight-bold
@@ -44,7 +46,6 @@
           </v-card>
         </v-col>
       </v-row>
-      
       <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template

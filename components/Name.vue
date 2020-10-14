@@ -23,7 +23,12 @@
 
 <script>
 export default {
-  props: ['message'],
+  props: {
+    message: {
+      type: String,
+      required: true
+    }
+  },
   data () {
     return {
       letters: []
@@ -35,9 +40,9 @@ export default {
   },
   methods: {
     parseLetters (message) {
-      let result = []
+      const result = []
       Array.from(message).forEach((letter, index) => {
-        result.push({ value: letter, animationType: index + 1})
+        result.push({ value: letter, animationType: index + 1 })
       })
       return result
     },

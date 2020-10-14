@@ -1,5 +1,5 @@
 <template>
-    <v-layout>
+  <v-layout>
     <v-flex class="text-center">
       <h3
         class="mb-5"
