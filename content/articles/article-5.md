@@ -1,8 +1,8 @@
 ---
-title: Introduction 2
-id: article-2
+title: Introduction 5
+id: article-5
 description: Learn how to use @nuxt/content.
-date: '2020-10-02'
+date: '2020-10-05'
 ---
 
 # Lorem ipsum

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <v-container>
+    <v-container
+      v-for="(content, index) in contents"
+      :key="index"
+    >
       <h1>
         <name :message="content.title" />
       </h1>
@@ -16,7 +19,6 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
 import Name from '~/components/Name.vue'
 
 export default {
@@ -25,14 +27,16 @@ export default {
   },
   data () {
     return {
-      content: this.$store.state.content
+      contents: []
     }
   },
+  mounted () {
+    this.getContent()
+  },
   methods: {
-    ...mapMutations({
-      set: 'content/set',
-      remove: 'content/remove'
-    })
+    async getContent () {
+      this.contents = await this.$content('articles').where({ id: this.$route.params.id }).fetch()
+    }
   }
 }
 </script>
