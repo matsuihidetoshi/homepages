@@ -1,6 +1,22 @@
 <template>
   <div>
     <v-container>
+      <h1
+        class="
+          text-center
+          ma-2
+        "
+      >
+        <name :message="title" />
+      </h1>
+
+      <v-pagination
+        v-model="page"
+        :length="pageLength"
+        :total-visible="5"
+        @input="getContentList()"
+      />
+
       <v-row>
         <v-flex
           v-for="(content, index) in contents"
@@ -12,7 +28,7 @@
           class="pa-3"
         >
           <nuxt-link
-            :to="contentType + content.id"
+            :to="contentType + '/' + content.id"
           >
             <v-card>
               <v-card-title>
@@ -30,7 +46,7 @@
         v-model="page"
         :length="pageLength"
         :total-visible="5"
-        @input="getArticleList()"
+        @input="getContentList()"
       />
 
       <v-btn
@@ -49,14 +65,18 @@
 import Name from '~/components/Name.vue'
 
 export default {
+  components: {
+    Name
+  },
   props: {
     contentType: {
       type: String,
       required: true
+    },
+    title: {
+      type: String,
+      required: true
     }
-  },
-  components: {
-    Name
   },
   data () {
     return {
