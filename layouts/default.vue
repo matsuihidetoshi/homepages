@@ -64,23 +64,28 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-newspaper-variant-multiple-outline',
-          title: 'Articles',
-          to: '/articles'
+          icon: 'mdi-information-outline',
+          title: 'About',
+          to: '/about'
         },
         {
           icon: 'mdi-wrench',
-          title: 'Skills',
-          to: '/skills'
-        },
-        {
-          icon: 'mdi-information-outline',
-          title: 'Works',
+          title: '制作物',
           to: '/works'
         },
         {
+          icon: 'mdi-camera',
+          title: 'メディア掲載',
+          to: '/publications'
+        },
+        {
+          icon: 'mdi-newspaper-variant-multiple-outline',
+          title: '日記',
+          to: '/articles'
+        },
+        {
           icon: 'mdi-comment-text-outline',
-          title: 'Contact',
+          title: 'お問い合わせ',
           to: '/contact'
         }
       ],

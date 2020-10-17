@@ -30,12 +30,34 @@
             :to="contentType + '/' + content.id"
           >
             <v-card>
-              <v-card-title>
-                <name :message="content.title" />
-              </v-card-title>
-              <v-card-text>
-                <name :message="content.date" />
-              </v-card-text>
+              <v-row>
+                <v-col cols="4">
+                  <v-avatar
+                    class="ml-3"
+                    size="100"
+                    tile
+                  >
+                    <v-img :src="content.image" />
+                  </v-avatar>
+                </v-col>
+
+                <v-col cols="8">
+                  <v-card-title
+                    class="
+                      text-truncate
+                      ml-2
+                    "
+                  >
+                    <name :message="content.title" />
+                  </v-card-title>
+
+                  <v-card-text
+                    class="ml-2"
+                  >
+                    <name :message="new Date(content.date).toLocaleDateString()" />
+                  </v-card-text>
+                </v-col>
+              </v-row>
             </v-card>
           </nuxt-link>
         </v-flex>

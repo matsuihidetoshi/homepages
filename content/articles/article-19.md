@@ -1,8 +1,9 @@
 ---
 title: Introduction 19
 id: article-19
+image: articles.png
 description: Learn how to use @nuxt/content.
-date: '2020-10-19'
+date: 2020-10-19
 ---
 
 # Lorem ipsum
