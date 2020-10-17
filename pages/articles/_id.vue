@@ -1,42 +1,15 @@
 <template>
   <div>
-    <v-container
-      v-for="(content, index) in contents"
-      :key="index"
-    >
-      <h1>
-        <name :message="content.title" />
-      </h1>
-      <nuxt-content :document="content" />
-      <v-btn
-        class="float-right"
-        to="/articles"
-      >
-        back
-      </v-btn>
-    </v-container>
+    <detail content-type="articles" />
   </div>
 </template>
 
 <script>
-import Name from '~/components/Name.vue'
+import Detail from '~/components/contents/Detail.vue'
 
 export default {
   components: {
-    Name
-  },
-  data () {
-    return {
-      contents: []
-    }
-  },
-  mounted () {
-    this.getContent()
-  },
-  methods: {
-    async getContent () {
-      this.contents = await this.$content('articles').where({ id: this.$route.params.id }).fetch()
-    }
+    Detail
   }
 }
 </script>

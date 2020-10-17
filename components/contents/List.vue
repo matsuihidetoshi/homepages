@@ -13,7 +13,6 @@
       <v-pagination
         v-model="page"
         :length="pageLength"
-        :total-visible="5"
         @input="getContentList()"
       />
 
@@ -45,7 +44,6 @@
       <v-pagination
         v-model="page"
         :length="pageLength"
-        :total-visible="5"
         @input="getContentList()"
       />
 
