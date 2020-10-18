@@ -1,85 +1,75 @@
 <template>
-  <div>
-    <v-container>
-      <h1
-        class="
-          text-center
-          ma-2
-        "
+  <v-container>
+    <h1
+      class="
+        text-center
+        ma-2
+      "
+    >
+      <name :message="title" />
+    </h1>
+
+    <v-pagination
+      v-model="page"
+      :length="pageLength"
+      @input="getContentList()"
+    />
+
+    <v-row>
+      <v-flex
+        v-for="(content, index) in contents"
+        :key="index"
+        xs12
+        sm6
+        md4
+        class="pa-3"
       >
-        <name :message="title" />
-      </h1>
-
-      <v-pagination
-        v-model="page"
-        :length="pageLength"
-        @input="getContentList()"
-      />
-
-      <v-row>
-        <v-flex
-          v-for="(content, index) in contents"
-          :key="index"
-          v-ripple
-          xs12
-          sm6
-          md4
-          class="pa-3"
+        <nuxt-link
+          :to="contentType + '/' + content.id"
         >
-          <nuxt-link
-            :to="contentType + '/' + content.id"
+          <v-card
+            v-ripple
           >
-            <v-card>
-              <v-row>
-                <v-col cols="4">
-                  <v-avatar
-                    class="ml-3"
-                    size="100"
-                    tile
-                  >
-                    <v-img :src="content.image" />
-                  </v-avatar>
-                </v-col>
+            <v-img
+              :src="content.image"
+              height="120"
+            />
 
-                <v-col cols="8">
-                  <v-card-title
-                    class="
-                      text-truncate
-                      ml-2
-                    "
-                  >
-                    <name :message="content.title" />
-                  </v-card-title>
+            <v-card-title
+              class="
+                text-truncate
+                ml-2
+              "
+            >
+              <name :message="content.title" />
+            </v-card-title>
 
-                  <v-card-text
-                    class="ml-2"
-                  >
-                    <name :message="new Date(content.date).toLocaleDateString()" />
-                  </v-card-text>
-                </v-col>
-              </v-row>
-            </v-card>
-          </nuxt-link>
-        </v-flex>
-      </v-row>
+            <v-card-text
+              class="ml-2"
+            >
+              <name :message="new Date(content.date).toLocaleDateString()" />
+            </v-card-text>
+          </v-card>
+        </nuxt-link>
+      </v-flex>
+    </v-row>
 
-      <v-pagination
-        v-model="page"
-        :length="pageLength"
-        @input="getContentList()"
-      />
+    <v-pagination
+      v-model="page"
+      :length="pageLength"
+      @input="getContentList()"
+    />
 
-      <v-btn
-        to="/"
-        class="
-          mt-3
-          float-right
-        "
-      >
-        back
-      </v-btn>
-    </v-container>
-  </div>
+    <v-btn
+      to="/"
+      class="
+        mt-3
+        float-right
+      "
+    >
+      back
+    </v-btn>
+  </v-container>
 </template>
 <script>
 import Name from '~/components/Name.vue'
