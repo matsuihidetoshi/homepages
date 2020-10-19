@@ -6,7 +6,7 @@
     <nuxt-content v-if="content" :document="content" />
     <v-btn
       class="float-right"
-      @click="redirect('/articles')"
+      :to="'/' + contentType"
     >
       back
     </v-btn>
@@ -50,9 +50,6 @@ export default {
   methods: {
     async getContent () {
       return await this.$content(this.contentType).where({ id: this.$route.params.id }).fetch()
-    },
-    redirect (route) {
-      this.$router.push(route)
     }
   }
 }
