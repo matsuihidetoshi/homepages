@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <h1
       class="
         text-center
@@ -77,7 +77,7 @@
         :width="10"
       />
     </v-overlay>
-  </v-container>
+  </div>
 </template>
 <script>
 import Name from '~/components/Name.vue'

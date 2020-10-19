@@ -1,7 +1,5 @@
 <template>
-  <v-layout>
-    <content-list content-type="articles" title="日記" />
-  </v-layout>
+  <content-list content-type="articles" title="日記" />
 </template>
 <script>
 import ContentList from '~/components/contents/List.vue'
