@@ -16,12 +16,12 @@
     />
 
     <v-row>
-      <v-flex
+      <v-col
         v-for="(content, index) in contents"
         :key="index"
-        xs12
-        sm6
-        md4
+        xs="12"
+        sm="6"
+        md="4"
         class="pa-3"
       >
         <nuxt-link
@@ -51,7 +51,7 @@
             </v-card-text>
           </v-card>
         </nuxt-link>
-      </v-flex>
+      </v-col>
     </v-row>
 
     <v-pagination
@@ -69,6 +69,14 @@
     >
       back
     </v-btn>
+    <v-overlay :value="overlay">
+      <v-progress-circular
+        v-if="!loaded"
+        indeterminate
+        :size="80"
+        :width="10"
+      />
+    </v-overlay>
   </v-container>
 </template>
 <script>
@@ -94,12 +102,17 @@ export default {
       page: 1,
       pageLength: 0,
       limit: 6,
-      skip: 0
+      skip: 0,
+      overlay: true,
+      loaded: false
     }
   },
   mounted () {
-    this.getContentList()
-    this.getTotalLength()
+    this.getContentList().then(() => {
+      this.getTotalLength()
+      this.overlay = false
+      this.loaded = true
+    })
   },
   methods: {
     async getContentList () {

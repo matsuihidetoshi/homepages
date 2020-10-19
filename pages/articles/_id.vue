@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <detail content-type="articles" />
-  </div>
+  <detail content-type="articles" />
 </template>
 
 <script>

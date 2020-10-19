@@ -1,20 +1,23 @@
 <template>
   <div>
-    <v-container
-      v-for="(content, index) in contents"
-      :key="index"
+    <h1>
+      <name v-if="content" :message="content.title" />
+    </h1>
+    <nuxt-content v-if="content" :document="content" />
+    <v-btn
+      class="float-right"
+      to="/articles"
     >
-      <h1>
-        <name :message="content.title" />
-      </h1>
-      <nuxt-content :document="content" />
-      <v-btn
-        class="float-right"
-        to="/articles"
-      >
-        back
-      </v-btn>
-    </v-container>
+      back
+    </v-btn>
+    <v-overlay :value="overlay">
+      <v-progress-circular
+        v-if="!loaded"
+        indeterminate
+        :size="80"
+        :width="10"
+      />
+    </v-overlay>
   </div>
 </template>
 <script>
@@ -32,15 +35,21 @@ export default {
   },
   data () {
     return {
-      contents: []
+      content: null,
+      overlay: true,
+      loaded: false
     }
   },
   mounted () {
-    this.getContent()
+    this.getContent().then((contents) => {
+      this.content = contents[0]
+      this.overlay = false
+      this.loaded = true
+    })
   },
   methods: {
     async getContent () {
-      this.contents = await this.$content(this.contentType).where({ id: this.$route.params.id }).fetch()
+      return await this.$content(this.contentType).where({ id: this.$route.params.id }).fetch()
     }
   }
 }
