@@ -3,12 +3,30 @@
     <h1>
       <name v-if="content" :message="content.title" />
     </h1>
+    <name v-if="content" :message="new Date(content.date).toLocaleDateString()" />
     <nuxt-content v-if="content" :document="content" />
+
     <v-btn
-      class="float-right"
+      class="
+        mt-3
+        mb-3
+        float-right
+      "
       :href="baseUrl()"
     >
-      back
+      top
+    </v-btn>
+
+    <v-btn
+      class="
+        mt-3
+        mb-3
+        mr-3
+        float-right
+      "
+      :href="baseUrl()"
+    >
+      {{ contentType }}
     </v-btn>
 
     <v-overlay :value="overlay">
