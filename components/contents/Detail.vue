@@ -6,7 +6,7 @@
     <nuxt-content v-if="content" :document="content" />
     <v-btn
       class="float-right"
-      :to="'/' + contentType"
+      :href="baseUrl()"
     >
       back
     </v-btn>
@@ -51,6 +51,9 @@ export default {
   methods: {
     async getContent () {
       return await this.$content(this.contentType).where({ id: this.$route.params.id }).fetch()
+    },
+    baseUrl () {
+      return process.env.baseUrl
     }
   }
 }
