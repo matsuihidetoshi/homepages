@@ -24,7 +24,7 @@
         mr-3
         float-right
       "
-      :href="baseUrl()"
+      :href="'/' + contentType"
     >
       {{ contentType }}
     </v-btn>
