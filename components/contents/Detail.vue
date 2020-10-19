@@ -17,18 +17,6 @@
       top
     </v-btn>
 
-    <v-btn
-      class="
-        mt-3
-        mb-3
-        mr-3
-        float-right
-      "
-      :href="'/' + contentType"
-    >
-      {{ contentType }}
-    </v-btn>
-
     <v-overlay :value="overlay">
       <v-progress-circular
         v-if="!loaded"
